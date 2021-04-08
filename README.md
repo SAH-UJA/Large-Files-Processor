@@ -66,4 +66,10 @@ TABLE : `AAGR_TABLE (name text, no_of_products text)`
 
 ### What would you improve if given more days :
 Unfortunately, due to lack of compute resources and time, the following remains in the backlog:
-1)
+1) Use of Dask Framework for Parallel Processing at every level. We can use dask in place of pandas dataframes to boost up performance as dask loads data partially onto the RAM. Also, it has partitioning features which helps to process large datasets. Dask achieves parallelism through Mutliprocessing by utilizing all the cores of the CPU.
+2) Numba is a library which uses jit wrappers to drastically optimize pyhton code performance.
+3) Even PySpark would be a great framework for this project. It is used in the industry for Big Data tasks like this and has internal support of its own sql as well.
+4) A Design optimization was essential here. There was a need of a data structure to find differences in the incoming data and existing local db to optimize updates by just doing processing on the difference and not on the entire db. Also, Triggers could be handly here to reflect changes in the `AAGR_TABLE` when there is some change in the `PRODUCTS` table.
+5) Instead of pandas dataframes, I could have used Vaex which is another awesome framework that can handle a billion records in seconds. Due to lack of compute, I couldn't try it out. 
+6) Async calls can be made to the data source end points using `asynio` and `aiohttp` to achieve parallel ingestion in a better way.
+7) A better DB like Alteryx could have been used for achieving parallel ingestion.
