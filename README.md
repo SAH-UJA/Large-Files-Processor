@@ -40,7 +40,25 @@ Step 8 : To see the changes in the DB you can run "python readdb.py". Here, you 
 ![9 - Read DB after updation](https://user-images.githubusercontent.com/53290539/113981559-6e9f8900-9865-11eb-8bac-1062e0c40f23.JPG)
 
 
-Details of all the tables and their schema
-What is done from “Points to achieve” and number of entries in all your tables
-What is not done from “Points to achieve”.
+### Details of all the tables and their schema :
+DATABASE : database.db
+TYPE : SQLITE
+NO. OF TABLES : 2
+
+TABLE : PRODUCTS
+SCHEMA : (name text, sku text primary key, description text)
+
+TABLE : AAGR_TABLE
+SCHEMA : (name text, no_of_products text)
+
+### What is done from “Points to achieve” and number of entries in all your tables :
+1) Your code should follow concept of OOPS
+2) Support for regular non-blocking parallel ingestion of the given file into a table. Consider thinking about the scale of what should happen if the file is to be processed in 2 mins.
+3) Support for updating existing products in the table based on `sku` as the primary key. (Yes, we know about the kind of data in the file. You need to find a workaround for it)
+4) All product details are to be ingested into a single table
+5) An aggregated table on above rows with `name` and `no. of products` as the columns
+
+### What is not done from “Points to achieve”.
+1) Partial Parallel ingestion was achieved.
+2) It is assumed that MERGING is required and not CONCAT.
 What would you improve if given more days
