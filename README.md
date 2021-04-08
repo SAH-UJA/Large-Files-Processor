@@ -53,6 +53,19 @@ TABLE : `PRODUCTS (name text, sku text primary key, description text)`
 
 TABLE : `AAGR_TABLE (name text, no_of_products text)`
 
+ADVANTAGES :
+* Lightweight
+* Better Performance
+* No installation Needed
+* Reliable
+* Portable
+* Accesible
+* Reduced cost and complexity
+
+DISADVANTAGES : 
+* SQLite is used to handle low to medium traffic HTTP requests.
+* Database size is restricted to 2GB in most cases.
+
 ### What is done from “Points to achieve” and number of entries in all your tables :
 1) Your code should follow concept of OOPS
 2) Support for regular non-blocking parallel ingestion of the given file into a table. Consider thinking about the scale of what should happen if the file is to be processed in 2 mins.
@@ -63,6 +76,7 @@ TABLE : `AAGR_TABLE (name text, no_of_products text)`
 ### What is not done from “Points to achieve” :
 1) Partial Parallel ingestion was achieved.
 2) It is assumed that MERGING is required and not CONCAT.
+3) `SKU` is the Primary Key for the `PRODUCTS` DB.
 
 ### What would you improve if given more days :
 Unfortunately, due to lack of compute resources and time, the following remains in the backlog:
@@ -73,3 +87,4 @@ Unfortunately, due to lack of compute resources and time, the following remains 
 5) Instead of pandas dataframes, I could have used Vaex which is another awesome framework that can handle a billion records in seconds. Due to lack of compute, I couldn't try it out. 
 6) Async calls can be made to the data source end points using `asynio` and `aiohttp` to achieve parallel ingestion in a better way.
 7) A better DB like Alteryx could have been used for achieving parallel ingestion.
+8) Logging and exception handling could have been improved to make the system/design robust.
