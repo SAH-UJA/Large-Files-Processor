@@ -58,7 +58,10 @@ SCHEMA : (name text, no_of_products text)
 4) All product details are to be ingested into a single table
 5) An aggregated table on above rows with `name` and `no. of products` as the columns
 
-### What is not done from “Points to achieve”.
+### What is not done from “Points to achieve” :
 1) Partial Parallel ingestion was achieved.
 2) It is assumed that MERGING is required and not CONCAT.
-What would you improve if given more days
+
+### What would you improve if given more days :
+Unfortunately, due to lack of compute resources and time, the following remains in the backlog:
+1)
