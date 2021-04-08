@@ -49,9 +49,9 @@ TYPE : `SQLITE`
 
 NO. OF TABLES : `2`
 
-TABLE : `PRODUCTS (name text, sku text primary key, description text)`
+TABLE : `PRODUCTS (name text, sku text primary key, description text)` - To store Products Data after aggregation from different source via pandas dataframe.
 
-TABLE : `AAGR_TABLE (name text, no_of_products text)`
+TABLE : `AAGR_TABLE (name text, no_of_products text)` - To store the aggregate w.r.t `name` attribute of `PRODUCTS` Table.
 
 ADVANTAGES :
 * Lightweight
