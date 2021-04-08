@@ -1,5 +1,6 @@
 # Large-Files-Processor
-### PROBLEM STATEMENT : Aim is to build a system which is able to handle long running processes in a distributed fashion. We need to be able to import products from a CSV file and into a database. There are half a million product details to be imported into the database. You can find the CSV file here in a compressed format Large File processing - Assignment.  After the import, we will run an aggregate query to give us no. of products with the same name.
+### PROBLEM STATEMENT :
+Aim is to build a system which is able to handle long running processes in a distributed fashion. We need to be able to import products from a CSV file and into a database. There are half a million product details to be imported into the database. You can find the CSV file here in a compressed format Large File processing - Assignment.  After the import, we will run an aggregate query to give us no. of products with the same name.
 
 ![1 - Setup](https://user-images.githubusercontent.com/53290539/113976502-dd2d1880-985e-11eb-9e29-0c76c1f06c52.JPG)
 ![2 - Setup](https://user-images.githubusercontent.com/53290539/113976518-e0c09f80-985e-11eb-9af8-46654a80b806.JPG)
