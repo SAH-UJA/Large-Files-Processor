@@ -69,7 +69,7 @@ DISADVANTAGES :
 ### What is done from “Points to achieve” and number of entries in all your tables :
 * No. of Entries in `PRODUCTS` Table = 500000
 * No. of Entries in `AAGR_TABLE` Table = 222024
-Note : The master ingested 2 x 500000 i.e. 500000 per data source but my assumption was that the system aim to merge the data and store therefore on merging duplicates were removed leaving 500000 rows in `PROCUSTS`
+Note : The master ingested 2 x 500000 i.e. 500000 per data source but my assumption was that the system aim to merge the data and store therefore on merging duplicates were removed leaving 500000 rows in `PRODUCTS`
 
 1) Your code should follow concept of OOPS
 2) Support for regular non-blocking parallel ingestion of the given file into a table. Consider thinking about the scale of what should happen if the file is to be processed in 2 mins.
