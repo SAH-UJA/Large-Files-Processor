@@ -1,6 +1,6 @@
 # Large-Files-Processor
 ### Problem Statement :
-Aim is to build a system which is able to handle long running processes in a distributed fashion. We need to be able to import products from a CSV file and into a database. There are half a million product details to be imported into the database. After the import, we will run an aggregate query to give us no. of products with the same name.
+Aim is to build a system which is able to handle long running processes in a distributed fashion. We need to be able to import products from a `CSV` file and into a database. There are half a million product details to be imported into the database. After the import, we will run an aggregate query to give us no. of products with the same name.
 
 ### Introduction :
 This repo provides a basic framework for aggregating `CSV` files with the same schema in a distributed fashion with a partial parallelism using threads and event loop. A data source is defined which hosts its data and staus. If there is a change in data at a given data source, the status changes. The Master Server continuously monitors this status via a `HTTP` call to the `/sense` endpoint hosted by each data source. Once, one pass of scanning is complete the fetching of data happens. The data once fetched is stored into a dataframe. Merging of data from all the data sources happens with a separate thread. After merging a groupby operation also takes place to club data on the basis of `name` and then everything is stored in the local sqlite database. User can also use the UI for updating the db.
@@ -79,13 +79,13 @@ Note : The master ingested 2 x 500000 i.e. 500000 per data source but my assumpt
 
 ### What is not done from “Points to achieve” :
 1) Partial Parallel ingestion was achieved.
-2) It is assumed that MERGING is required and not CONCAT.
+2) It is assumed that `MERGING` is required and not `CONCAT`.
 3) `SKU` is the Primary Key for the `PRODUCTS` DB.
 
 ### What would you improve if given more days :
 Unfortunately, due to lack of compute resources and time, the following remains in the backlog:
 1) Use of Dask Framework for Parallel Processing at every level. We can use dask in place of pandas dataframes to boost up performance as dask loads data partially onto the RAM. Also, it has partitioning features which helps to process large datasets. Dask achieves parallelism through Mutliprocessing by utilizing all the cores of the CPU.
-2) Numba is a library which uses jit wrappers to drastically optimize pyhton code performance.
+2) Numba is a library which uses jit wrappers to drastically optimize python code performance.
 3) Even PySpark would be a great framework for this project. It is used in the industry for Big Data tasks like this and has internal support of its own sql as well.
 4) A Design optimization was essential here. There was a need of a data structure to find differences in the incoming data and existing local db to optimize updates by just doing processing on the difference and not on the entire db. Also, Triggers could be handly here to reflect changes in the `AAGR_TABLE` when there is some change in the `PRODUCTS` table.
 5) Instead of pandas dataframes, I could have used Vaex which is another awesome framework that can handle a billion records in seconds. Due to lack of compute, I couldn't try it out. 
